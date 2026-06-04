@@ -1,0 +1,20 @@
+{
+    "id": "megacity_skirmish",
+    "title": "Megacity Skirmish",
+    "description": "Patrol the procedural city and eliminate the enemy squad.",
+
+    "map": "megacity",
+    "map_params": { "size": 120 },
+
+    "lighting": "day_clear",
+
+    "player_spawn": [0, 2, 0],
+    "player_loadout": ["gatling", "railgun", "rocketpod", "heatseeker", "sniper", "laser", "gauss"],
+
+    "enemy_groups": [
+        { "type": "patrol_mech", "count": 4, "at": [80, 0, 60], "spread": 10 }
+    ],
+
+    "win_condition":  { "type": "kill_all" },
+    "lose_condition": { "type": "player_dead" }
+}

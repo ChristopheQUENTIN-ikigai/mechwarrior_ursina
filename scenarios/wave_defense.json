@@ -1,0 +1,27 @@
+{
+    "id": "wave_defense",
+    "title": "Wave Defense",
+    "description": "Survive escalating waves of enemies.",
+
+    "map": "arena_flat",
+    "map_params": { "radius": 75, "pillars": 10 },
+
+    "lighting": "dusk_orange",
+
+    "player_spawn": [0, 2, 0],
+    "player_loadout": ["gatling", "railgun", "rocketpod", "heatseeker", "sniper"],
+
+    "enemy_groups": [],
+
+    "_doc": "wave_defense logic is in scenarios/wave_defense.py — it reads waves[] below.",
+    "waves": [
+        { "delay_after_prev": 1.5,  "type": "patrol_mech", "count": 2,  "spread": 30 },
+        { "delay_after_prev": 12.0, "type": "patrol_mech", "count": 3,  "spread": 40 },
+        { "delay_after_prev": 15.0, "type": "patrol_mech", "count": 5,  "spread": 50 },
+        { "delay_after_prev": 18.0, "type": "patrol_mech", "count": 7,  "spread": 60 },
+        { "delay_after_prev": 22.0, "type": "patrol_mech", "count": 10, "spread": 65 }
+    ],
+
+    "win_condition":  { "type": "survive_seconds", "seconds": 999 },
+    "lose_condition": { "type": "player_dead" }
+}

@@ -1,0 +1,22 @@
+{
+    "id": "canyon_ambush",
+    "title": "Canyon Ambush",
+    "description": "Push north through a long canyon. Enemies in cover.",
+
+    "map": "canyon",
+    "map_params": { "length": 220, "width": 50, "rocks": 30 },
+
+    "lighting": "canyon_overcast",
+
+    "player_spawn": [0, 2, -208],
+    "player_loadout": ["gatling", "railgun", "rocketpod", "heatseeker", "sniper"],
+
+    "enemy_groups": [
+        { "type": "patrol_mech", "count": 2, "at": [0, 0, -80], "spread": 12 },
+        { "type": "patrol_mech", "count": 3, "at": [0, 0,   0], "spread": 14 },
+        { "type": "patrol_mech", "count": 3, "at": [0, 0,  90], "spread": 14 }
+    ],
+
+    "win_condition":  { "type": "reach_position", "at": [0, 2, 200], "radius": 8 },
+    "lose_condition": { "type": "player_dead" }
+}

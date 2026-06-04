@@ -1,0 +1,20 @@
+{
+    "id": "arena_duel",
+    "title": "Arena Duel",
+    "description": "1v1 in a flat walled arena. Test your aim.",
+
+    "map": "arena_flat",
+    "map_params": { "radius": 60, "pillars": 8 },
+
+    "lighting": "arena_neutral",
+
+    "player_spawn": [0, 2, -52],
+    "player_loadout": ["gatling", "railgun", "sniper"],
+
+    "enemy_groups": [
+        { "type": "patrol_mech", "count": 1, "at": [0, 0, 52], "spread": 0 }
+    ],
+
+    "win_condition":  { "type": "kill_all" },
+    "lose_condition": { "type": "player_dead" }
+}

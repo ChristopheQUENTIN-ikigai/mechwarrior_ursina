@@ -1,0 +1,21 @@
+{
+    "id": "mod_demo",
+    "title": "Mod Demo",
+    "description": "Showcases the example_mod: plasma cannon + heavy mechs.",
+
+    "map": "arena_flat",
+    "map_params": { "radius": 70, "pillars": 6 },
+
+    "lighting": "dusk_orange",
+
+    "player_spawn": [0, 2, -55],
+    "player_loadout": ["gatling", "railgun", "plasma_cannon"],
+
+    "enemy_groups": [
+        { "type": "patrol_mech", "count": 3, "at": [0, 0, 30], "spread": 12 },
+        { "type": "heavy_mech",  "count": 1, "at": [0, 0, 55], "spread": 0 }
+    ],
+
+    "win_condition":  { "type": "kill_all" },
+    "lose_condition": { "type": "player_dead" }
+}
