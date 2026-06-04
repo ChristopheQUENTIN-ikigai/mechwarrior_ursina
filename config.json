@@ -1,0 +1,228 @@
+{
+    "_comment": "Mech Tactical Arena - Configuration File (patched: 5 weapons + hardpoints + HUD)",
+
+    "window": {
+        "title": "Mech Tactical Arena Prototype",
+        "fullscreen": true
+    },
+
+    "game_speed": 2.0,
+
+    "camera": {
+        "pivot_height": 6,
+        "default_distance": 28,
+        "min_distance": 8,
+        "max_distance": 50,
+        "height_offset": 6,
+        "height_per_zoom": 0.3,
+        "pitch": 15,
+        "pitch_min": -30,
+        "pitch_max": 60,
+        "zoom_speed": 4,
+        "zoom_smooth": 6,
+        "collision_smooth": 10,
+        "return_smooth": 4
+    },
+
+    "mouse": {
+        "sensitivity_x": 80,
+        "sensitivity_y": 40,
+        "locked": true
+    },
+
+    "keybinds": {
+        "_comment": "AZERTY native: Z=forward, S=back, Q=strafe left, D=strafe right.",
+
+        "forward":       ["w", "z", "up arrow"],
+        "backward":      ["s", "down arrow"],
+        "strafe_left":   ["q", "a"],
+        "strafe_right":  ["d", "e"],
+        "turn_left":     ["left arrow"],
+        "turn_right":    ["right arrow"],
+        "jetpack":       "space",
+
+        "fire_gatling":   "left mouse down",
+        "fire_railgun":   "right mouse down",
+        "fire_rocketpod": "1",
+        "fire_heatseeker":"2",
+        "fire_sniper":    "3",
+        "fire_laser":     "4",
+        "fire_gauss":     "5",
+
+        "speed_up":      ["+", "="],
+        "speed_down":    ["-", "_"],
+
+        "quit":          "escape",
+        "fullscreen":    "f",
+        "zoom_in":       "scroll up",
+        "zoom_out":      "scroll down"
+    },
+
+    "player": {
+        "spawn_position": [0, 2, 0],
+        "spawn_heading": 0,
+        "speed": 6,
+        "strafe_speed": 4.5,
+        "turn_speed": 70,
+        "hp": 200,
+        "max_heat": 100,
+        "heat_dissipation": 6,
+        "collision_margin": 4.0,
+        "gravity": 20,
+        "jetpack_thrust": 18,
+        "max_fuel": 100,
+        "fuel_burn_rate": 25,
+        "fuel_regen_rate": 10
+    },
+
+    "_weapon_doc": "type: projectile|hitscan|salvo|homing. hardpoint: arm_left|arm_right|shoulder_left|shoulder_right.",
+
+    "weapons": {
+        "gatling": {
+            "type": "projectile",
+            "hardpoint": "arm_right",
+            "speed": 80, "damage": 4, "heat": 1.2,
+            "cooldown": 0.06,
+            "spread_deg": 1.8,
+            "continuous": true,
+            "color": [255, 220, 80], "scale": 0.18, "model": "cube"
+        },
+        "railgun": {
+            "type": "hitscan",
+            "hardpoint": "arm_left",
+            "damage": 70, "heat": 35,
+            "cooldown": 2.5,
+            "charge_time": 0.8,
+            "beam_color": [120, 200, 255], "beam_thickness": 0.18,
+            "beam_lifetime": 0.18
+        },
+        "rocketpod": {
+            "type": "salvo",
+            "hardpoint": "shoulder_right",
+            "salvo_count": 6,
+            "salvo_interval": 0.08,
+            "speed": 35, "damage": 18, "heat": 4,
+            "cooldown": 1.8,
+            "spread_deg": 6.0,
+            "color": [255, 140, 40], "scale": 0.5, "model": "cube"
+        },
+        "heatseeker": {
+            "type": "homing",
+            "hardpoint": "shoulder_left",
+            "speed": 28, "damage": 50, "heat": 22,
+            "cooldown": 3.0,
+            "turn_rate_deg_per_sec": 140,
+            "lock_range": 120,
+            "lock_cone_deg": 30,
+            "color": [255, 80, 200], "scale": 0.45, "model": "sphere"
+        },
+        "sniper": {
+            "type": "hitscan",
+            "hardpoint": "arm_left",
+            "damage": 120, "heat": 28,
+            "cooldown": 4.0,
+            "charge_time": 0.0,
+            "beam_color": [80, 255, 120], "beam_thickness": 0.06,
+            "beam_lifetime": 0.35
+        },
+        "laser": {
+            "type": "hitscan",
+            "hardpoint": "arm_right",
+            "damage": 6, "heat": 2.2,
+            "cooldown": 0.05,
+            "charge_time": 0.0,
+            "continuous": true,
+            "beam_color": [255, 70, 70], "beam_thickness": 0.045,
+            "beam_lifetime": 0.06
+        },
+        "gauss": {
+            "type": "hitscan",
+            "hardpoint": "arm_left",
+            "damage": 110, "heat": 18,
+            "cooldown": 3.0,
+            "charge_time": 0.35,
+            "beam_color": [200, 230, 255], "beam_thickness": 0.13,
+            "beam_lifetime": 0.28
+        }
+    },
+
+    "city": {
+        "size": 120,
+        "building_spacing": 8,
+        "exclusion_x": 40,
+        "exclusion_z": 55,
+        "building_types": {
+            "skyscraper":   { "weight": 0.12, "w_min": 5,  "w_max": 8,  "d_min": 5,  "d_max": 8,  "h_min": 24, "h_max": 45, "texture": "building_glass" },
+            "office":       { "weight": 0.18, "w_min": 5,  "w_max": 9,  "d_min": 5,  "d_max": 9,  "h_min": 12, "h_max": 24, "texture": "building" },
+            "house_small":  { "weight": 0.15, "w_min": 3,  "w_max": 5,  "d_min": 3,  "d_max": 6,  "h_min": 3,  "h_max": 6,  "texture": "house" },
+            "house_medium": { "weight": 0.12, "w_min": 5,  "w_max": 8,  "d_min": 5,  "d_max": 8,  "h_min": 5,  "h_max": 9,  "texture": "house_medium" },
+            "hospital":     { "weight": 0.04, "w_min": 9,  "w_max": 15, "d_min": 8,  "d_max": 12, "h_min": 6,  "h_max": 12, "texture": "hospital" },
+            "factory":      { "weight": 0.08, "w_min": 8,  "w_max": 15, "d_min": 6,  "d_max": 12, "h_min": 6,  "h_max": 11, "texture": "factory" },
+            "manufacture":  { "weight": 0.06, "w_min": 9,  "w_max": 18, "d_min": 8,  "d_max": 15, "h_min": 8,  "h_max": 14, "texture": "manufacture" },
+            "station":      { "weight": 0.05, "w_min": 12, "w_max": 21, "d_min": 5,  "d_max": 8,  "h_min": 5,  "h_max": 8,  "texture": "station" },
+            "airport":      { "weight": 0.03, "w_min": 18, "w_max": 30, "d_min": 12, "d_max": 21, "h_min": 5,  "h_max": 8,  "texture": "airport" },
+            "food_shop":    { "weight": 0.10, "w_min": 3,  "w_max": 6,  "d_min": 3,  "d_max": 6,  "h_min": 3,  "h_max": 6,  "texture": "food_shop" },
+            "warehouse":    { "weight": 0.07, "w_min": 8,  "w_max": 12, "d_min": 6,  "d_max": 11, "h_min": 5,  "h_max": 9,  "texture": "warehouse" }
+        },
+        "fill_density": 0.55,
+        "batch": true
+    },
+
+    "enemies": {
+        "squad_size": 4,
+        "squad_spawn": [80, 0, 60],
+        "hp": 80,
+        "speed": 3,
+        "attack_range": 40,
+        "chase_range": 60,
+        "fire_cooldown": 1.5,
+        "projectile_speed": 25,
+        "projectile_damage": 15
+    },
+
+    "terrain": {
+        "chunk_size": 32,
+        "noise_scale": 50,
+        "noise_height": 6,
+        "stream_radius": 3
+    },
+
+    "ground": {
+        "_comment": "Flat floor plane added by every map so the world is not see-through. y_top is the walkable surface height.",
+        "y_top": 0.0,
+        "tile_repeat": 0.25,
+        "megacity": { "texture": "concrete", "tint": [70, 72, 78],  "margin": 60 },
+        "arena_flat": { "texture": "metal",   "tint": [60, 62, 70],  "margin": 12 },
+        "canyon":   { "texture": "ground",   "tint": [120, 100, 75], "margin": 30 }
+    },
+
+    "lighting": {
+        "sun_direction": [1, -0.7, 0.3],
+        "ambient_color": [110, 110, 130, 255],
+        "sun_sphere": {
+            "enabled": true, "distance": 500, "size": 30,
+            "color": [255, 230, 80], "direction": "east", "elevation_degrees": 45
+        },
+        "moon_sphere": {
+            "enabled": true, "distance": 500, "size": 15,
+            "color": [200, 210, 255], "direction": "west", "elevation_degrees": 45
+        }
+    },
+
+    "textures": {
+        "use_procedural": true,
+        "asset_path": "./assets/textures"
+    },
+
+    "hud": {
+        "compass_y": 0.42,
+        "compass_bg_scale": [0.60, 0.04],
+        "compass_heading_scale": 0.6,
+        "bar_x": -0.82,
+        "bar_w": 0.25,
+        "bar_top_y": 0.46,
+        "bar_spacing": 0.035,
+        "crosshair_scale": 0.025,
+        "crosshair_thickness": 0.0035
+    }
+}
